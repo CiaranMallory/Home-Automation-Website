@@ -1,0 +1,120 @@
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Devices</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+
+	<body style="font-family: sans-serif">
+		<div class="controlContainer">
+			<div class="heading">
+				<h1>Dashboard</h1>
+			</div>
+			<div class="navbar">
+				<nav>
+				   <ul>
+			          <li><a href="Includes/logout.inc.php">Logout</a></li>
+			        </ul>
+			    </nav>
+			</div>
+
+			<div class="dropdown">
+  				<button class="dropbtn"><i class="fa fa-bars"></i></button>
+				<div class="dropdown-content">
+					<a href="temperature.html">Set Temperature</a>
+				    <a href="zone.html">Set Zone</a>
+				    <a href="Devices.html">Control Devices</a>
+				</div>
+			</div>
+
+			<div class="garageButton">
+				<h1>Garage Door</h1>
+				<button onclick="garageOpen()" class="controlButtons"><i class="fa fa-warehouse"></i> Open
+				</button>
+				<button onclick="garageClosed()" class="controlButtons"><i class="fa fa-warehouse"></i> Close
+				</button>
+			</div>
+
+			<div class="alarmButton">
+				<h1>Alarm</h1>
+				<button onclick="alarmOn()" class="controlButtons"><i class="fa fa-bell"></i>
+					On
+				</button>
+				<button onclick="alarmOff()" class="controlButtons"><i class="fa fa-bell"></i>
+					Off
+				</button>
+			</div>
+
+			<div class="lightsButton">
+				<h1>Lights</h1>
+				<button onclick="lightsOn()" class="controlButtons"><i class="fa fa-lightbulb"></i>
+					On
+				</button>
+				<button onclick="lightsOff()" class="controlButtons"><i class="fa fa-lightbulb"></i>
+					Off
+				</button>
+			</div>
+		</div>
+	
+	</body>
+
+	<script>
+		function garageOpen(){
+			var buttonClicked = 1;
+			if (buttonClicked == 1){
+				alert ("Garage Door Open");
+				buttonClicked = 0;
+			}
+		}
+
+		function garageClosed(){
+			var buttonClicked = 1;
+			if (buttonClicked == 1){
+				alert ("Garage Door Closed");
+				buttonClicked = 0;
+			}
+		}
+
+		function alarmOn(){
+			var buttonClicked = 1;
+			if (buttonClicked == 1){
+				alert ("Alarm on");
+				buttonClicked = 0;
+			}
+		}
+
+		function alarmOff(){
+			var buttonClicked = 1;
+			if (buttonClicked == 1){
+				alert ("Alarm off");
+				buttonClicked = 0;
+			}
+		}
+
+		function lightsOn(){
+			var buttonClicked = 1;
+			if (buttonClicked == 1){
+				alert ("Lights on");
+				buttonClicked = 0;
+			}
+		}
+
+		function lightsOff(){
+			var buttonClicked = 1;
+			if (buttonClicked == 1){
+				alert ("Lights off");
+				buttonClicked = 0;
+			}
+		}
+	</script>
+
+	<style>
+		.heading{
+		  padding-left: 50px;
+		  color: #011157;
+		}
+	</style>
+
+</html>

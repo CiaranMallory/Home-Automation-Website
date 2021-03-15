@@ -1,0 +1,169 @@
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Temperature Control</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+
+	<body style="font-family: sans-serif">
+		<div class="controlContainer">
+			<div class="heading">
+				<h1>Dashboard</h1>
+			</div>
+			<div class="navbar">
+				<nav>
+				   <ul>
+			          <li><a href="Includes/logout.inc.php">Logout</a></li>
+			        </ul>
+			    </nav>
+			</div>
+			<div class="dropdown">
+  				<button class="dropbtn"><i class="fa fa-bars"></i></button>
+				<div class="dropdown-content">
+					<a href="temperature.html">Set Temperature</a>
+				    <a href="zone.html">Set Zone</a>
+				    <a href="Devices.html">Control Devices</a>
+				</div>
+			</div>
+			<div class="TempContainer">
+				<div class="tempHeading">
+					<h2>Temperature Control</h2>
+				</div>
+				<div class="slider">
+					<div class="show-value">
+						<span id="current-value">100</span>
+					</div>
+					<input type="range" min="0" max="200" value="100" id="custom-slider" steps="1">
+					<div class="range">
+						<div>0</div>
+						<div>200</div>
+					</div>
+					<div class="inputButton">
+						<button onclick="setTemperature()">Set Temperature</button>
+					</div>
+				</div>
+
+				<div class="timer">
+					<form onsubmit="getOption()">
+					  <label for="timer1">Select time to turn heating on</label>
+					  <select name="timer1" id="timer1">
+					  	<option>0:00</option>
+					    <option>1:00</option>
+					    <option>2:00</option>
+					    <option>3:00</option>
+					    <option>4:00</option>
+					    <option>5:00</option>
+					    <option>6:00</option>
+					    <option>7:00</option>
+					    <option>8:00</option>
+					    <option>9:00</option>
+					    <option>10:00</option>
+					    <option>11:00</option>
+					    <option>12:00</option>
+					    <option>13:00</option>
+					    <option>14:00</option>
+					    <option>15:00</option>
+					    <option>16:00</option>
+					    <option>17:00</option>
+					    <option>18:00</option>
+					    <option>19:00</option>
+					    <option>20:00</option>
+					    <option>21:00</option>
+					    <option>22:00</option>
+					    <option>23:00</option>
+					    <option>24:00</option>
+					  </select>
+					  <br></br>
+
+					  <label for="timer2">Select time to turn heating off</label>
+					  <select name="timer2" id="timer2">
+					  	<option>0:00</option>
+					    <option>1:00</option>
+					    <option>2:00</option>
+					    <option>3:00</option>
+					    <option>4:00</option>
+					    <option>5:00</option>
+					    <option>6:00</option>
+					    <option>7:00</option>
+					    <option>8:00</option>
+					    <option>9:00</option>
+					    <option>10:00</option>
+					    <option>11:00</option>
+					    <option>12:00</option>
+					    <option>13:00</option>
+					    <option>14:00</option>
+					    <option>15:00</option>
+					    <option>16:00</option>
+					    <option>17:00</option>
+					    <option>18:00</option>
+					    <option>19:00</option>
+					    <option>20:00</option>
+					    <option>21:00</option>
+					    <option>22:00</option>
+					    <option>23:00</option>
+					    <option>24:00</option>
+					  </select>
+					  <br>
+					  <br>
+					  <input type="submit" value="Set Timer">
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			document.getElementById("custom-slider").addEventListener("input", function(event){
+				let value = event.target.value;
+				document.getElementById("current-value").innerText = value;
+				document.getElementById("current-value").classList.add("active");
+				document.getElementById("current-value").style.left = `${value/2}%`;
+			});
+
+			document.getElementById("custom-slider").addEventListener("blur", function(event){
+				document.getElementById("current-value").classList.remove("active");
+			});
+
+			function setTemperature(){
+				var temp = document.getElementById("custom-slider").value;
+				alert("Temperature set to: " + temp);
+			}
+
+			function getOption() { 
+	            selectElement1 =  document.querySelector('#timer1'); 
+	            selectElement2 =  document.querySelector('#timer2');
+
+	            timeON = selectElement1.value;
+	            timeOFF = selectElement2.value; 
+	  
+	            alert("Timer set on for: " + timeON + "\n" + "Timer set off for: " + timeOFF + "\n"); 
+        	} 
+		</script>
+
+		<style>
+			.heading{
+			  padding-left: 50px;
+			  color: #011157;
+			}
+
+			.timer{
+				padding-top: 125px;
+				padding-left: 100px;
+			}
+
+			.TempContainer{
+			  background: #011157;
+			  font-family: sans-serif;
+			  position: absolute;
+			  width: 500px;
+			  height: 500px;
+			  top: 50%;
+			  left: 50%;
+			  transform: translate(-50%, -50%);
+			}
+		</style>
+
+	</body>
+
+</html>

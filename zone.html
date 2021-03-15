@@ -1,0 +1,82 @@
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Zone</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+
+	<body style="font-family: sans-serif">
+		<div class="controlContainer">
+			<div class="heading">
+				<h1>Dashboard</h1>
+			</div>
+			<div class="navbar">
+				<nav>
+				   <ul>
+			          <li><a href="Includes/logout.inc.php">Logout</a></li>
+			        </ul>
+			    </nav>
+			</div>
+			<div class="dropdown">
+  				<button class="dropbtn"><i class="fa fa-bars"></i></button>
+				<div class="dropdown-content">
+					<a href="temperature.html">Set Temperature</a>
+				    <a href="zone.html">Set Zone</a>
+				    <a href="Devices.html">Control Devices</a>
+				</div>
+			</div>
+
+			<div class="zoneContainer">
+
+				<p>Choose Zones to set: </p>
+
+			    <div>
+			      <input type="checkbox" id="sittingroom" name="zones" value="Sitting Room" checked>
+			      <label for="sittingroom">Sitting Room</label>
+			    </div>
+
+			    <div>
+			      <input type="checkbox" id="bathroom" name="zones" value="Bathroom" checked>
+			      <label for="bathroom">Bathroom</label>
+			    </div>
+
+			    <div>
+			      <input type="checkbox" id="bedrooms" name="zones" value="Bedrooms">
+			      <label for="bedrooms">Bedroom</label>
+			    </div>
+
+			    <div>
+			      <input type="checkbox" id="kitchen" name="zones" value="Kitchen">
+			      <label for="kitchen">Kitchen</label>
+			    </div>
+
+			    <br>
+			    <div>
+			      <button id="select">Set Selected Zones</button>
+			    </div>
+			    <br>
+			</div>
+		</div>
+
+		<script>
+			
+			document.getElementById('select').onclick = function() {
+			  var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+			  for (var checkbox of checkboxes) {
+			    alert("The following zones have been set: " + checkbox.value);
+			  }
+			}
+
+		</script>
+
+		<style>
+			.heading{
+			  padding-left: 50px;
+			  color: #011157;
+			}
+		</style>
+	</body>
+
+</html>
